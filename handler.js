@@ -26,7 +26,7 @@ module.exports.getStripeEphemeralKeys = async event => {
     body: JSON.stringify(
       {
         message: key,
-        input: event,
+        //input: event,
       },
       null,
       2
@@ -52,7 +52,7 @@ module.exports.handlePaymentIntent = async event => {
     body: JSON.stringify(
       {
         message: clientSecret,
-        input: event,
+        //input: event,
       },
       null,
       2
