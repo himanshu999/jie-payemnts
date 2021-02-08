@@ -6,11 +6,13 @@ const stripe = Stripe('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 module.exports.getStripeEphemeralKeys = async event => {
   
   const api_version = '2020-08-27';
-  const customer_name = event.customer_name;
+  const customer_name = event.customer_name || 'Default';
+  const customer_email = event.customer_email || 'Default';
   //create a customer
   
   const customer = await stripe.customers.create({
     name: customer_name,
+    email: customer_email
   });
   
   //const customer_id = data.customer_id;
