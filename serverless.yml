@@ -13,3 +13,6 @@ functions:
       - http:
           path: /
           method: get
+          request:
+            template:
+              application/json: '{ "customer_name" : "$input.params(''customer_name'')" }'
