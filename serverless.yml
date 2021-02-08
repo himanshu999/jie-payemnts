@@ -15,4 +15,4 @@ functions:
           method: get
           request:
             template:
-              application/json: '{ "customer_name" : "$input.params(''customer_name'')" }'
+              application/json: '{ "customer_name" : "$input.params(''customer_name'')", "customer_email" : "$input.params(''customer_email'')" }'
