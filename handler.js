@@ -37,10 +37,12 @@ module.exports.getStripeEphemeralKeys = async event => {
 
 module.exports.handlePaymentIntent = async event => {
   
+  const queryString = event.queryStringParameters;
+  
   const paymentIntent = await stripe.paymentIntents.create({
-  amount: event.amount,
+  amount: queryString.amount,
   currency: 'usd',
-  customer: event.stripe_account_id
+  customer: queryString.stripe_account_id
   });
   
   const clientSecret = paymentIntent.client_secret
