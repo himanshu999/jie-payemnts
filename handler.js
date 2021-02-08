@@ -7,7 +7,7 @@ module.exports.getStripeEphemeralKeys = async event => {
   
   const api_version = '2020-08-27';
   const customer_name = event.customer_name || 'Default';
-  const customer_email = event.customer_email || 'Default';
+  const customer_email = event.customer_email || 'himanshunathani999@gmail.com';
   //create a customer
   
   const customer = await stripe.customers.create({
