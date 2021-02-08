@@ -33,3 +33,27 @@ module.exports.getStripeEphemeralKeys = async event => {
     ),
   };
 };
+
+
+module.exports.handlePaymentIntent = async event => {
+  
+  const paymentIntent = await stripe.paymentIntents.create({
+  amount: event.amount,
+  currency: 'usd',
+  customer: event.stripe_account_id
+  });
+  
+  const clientSecret = paymentIntent.client_secret
+  
+  return {
+    statusCode: 200,
+    body: JSON.stringify(
+      {
+        message: clientSecret,
+        input: event,
+      },
+      null,
+      2
+    ),
+  };
+};
