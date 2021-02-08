@@ -10,7 +10,7 @@ module.exports.getStripeEphemeralKeys = async event => {
   //create a customer
   
   const customer = await stripe.customers.create({
-    email: 'hhhhh',
+    email: 'himanshunathani999@gmail.com',
   });
   
   //const customer_id = data.customer_id;
