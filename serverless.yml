@@ -16,3 +16,12 @@ functions:
           request:
             template:
               application/json: '{ "customer_name" : "$input.params(''customer_name'')", "customer_email" : "$input.params(''customer_email'')" }'
+  handlePaymentIntent:
+    handler: handler.handlePaymentIntent
+    events:
+      - http:
+          path: /createPayment
+          method: get
+          request:
+            template:
+              application/json: '{ "amount" : "$input.params(''amount'')", "stripe_account_id" : "$input.params(''stripe_account_id'')" }'
