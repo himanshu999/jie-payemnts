@@ -7,8 +7,8 @@ provider:
   runtime: nodejs12.x
 
 functions:
-  hello:
-    handler: handler.hello
+  getStripeEphemeralKeys:
+    handler: handler.getStripeEphemeralKeys
     events:
       - http:
           path: /
