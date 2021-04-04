@@ -26,7 +26,7 @@ functions:
             template:
               application/json: '{ "amount" : "$input.params(''amount'')", "stripe_account_id" : "$input.params(''stripe_account_id'')" }'
   deleteUserData:
-    handler: handler.handlePaymentIntent
+    handler: handler.deleteUserData
     events:
       - http:
           path: /deleteData
