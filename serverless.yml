@@ -25,3 +25,14 @@ functions:
           request:
             template:
               application/json: '{ "amount" : "$input.params(''amount'')", "stripe_account_id" : "$input.params(''stripe_account_id'')" }'
+  deleteUserData:
+    handler: handler.handlePaymentIntent
+    events:
+      - http:
+          path: /deleteData
+          method: get
+          request:
+            template:
+              application/json: '{ "user" : "$input.params(''user'')" }'
+              
+              
