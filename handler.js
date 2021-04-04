@@ -59,3 +59,23 @@ module.exports.handlePaymentIntent = async event => {
     ),
   };
 };
+
+
+module.exports.deleteUserData = async event => {
+  
+  const queryString = event.queryStringParameters;
+  
+  
+  
+  return {
+    statusCode: 200,
+    body: JSON.stringify(
+      {
+        message: 'OK',
+        //input: event,
+      },
+      null,
+      2
+    ),
+  };
+};
